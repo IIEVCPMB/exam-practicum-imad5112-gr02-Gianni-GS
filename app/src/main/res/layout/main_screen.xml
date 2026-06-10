@@ -23,14 +23,8 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <!-- Item Spinner -->
 
-
-        <!-- Minimum Temperature -->
-
-
-        <!-- Save Button -->
-
+        <!-- Item Spinner-->
         <Spinner
             android:id="@+id/spinnerDays"
             android:layout_width="match_parent"
@@ -38,6 +32,7 @@
             android:layout_marginTop="20dp"
             android:background="#FFFFFF" />
 
+        <!-- Enter Category-->
         <EditText
             android:id="@+id/editCategory"
             android:layout_width="match_parent"
@@ -49,6 +44,7 @@
             android:padding="12dp"
             android:textSize="18sp" />
 
+        <!-- Enter Quantity-->
         <EditText
             android:id="@+id/editQuantity"
             android:layout_width="match_parent"
@@ -60,6 +56,7 @@
             android:padding="12dp"
             android:textSize="18sp" />
 
+        <!-- Enter Comments-->
         <EditText
             android:id="@+id/editComments"
             android:layout_width="match_parent"
@@ -73,8 +70,7 @@
             />
 
 
-
-
+        <!-- Save Button -->
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
@@ -87,8 +83,6 @@
             android:layout_marginBottom="15dp"
 
             />
-
-
 
         <!-- Details Button -->
         <Button
@@ -114,9 +108,9 @@
             android:layout_marginBottom="15dp"
             />
 
-
+        <!-- Total Items Packed -->
         <TextView
-            android:id="@+id/txtAverage"
+            android:id="@+id/txtTotalItems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -129,6 +123,7 @@
             android:background="@color/white"
             />
 
+        <!-- Exit Button-->
         <Button
             android:id="@+id/btnExit"
             android:layout_width="match_parent"
