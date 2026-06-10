@@ -50,9 +50,11 @@ class MainActivity : ComponentActivity() {
 
     private val category = Array(3) { "" }
 
-    private val quantity = Array(3) { "" }
+    private val quantity = IntArray(3)
 
     private val comments = Array(3) { "" }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -92,8 +94,9 @@ class MainActivity : ComponentActivity() {
         // Save Data
         btnSave.setOnClickListener {
             if (editCategory.text.isEmpty() ||
-                editQuantity.text.isEmpty() ||
-                editComments.text.isEmpty()
+                editComments.text.isEmpty() ||
+                editQuantity.text.isEmpty()
+
                 ) {
 
                 Toast.makeText(
@@ -104,7 +107,7 @@ class MainActivity : ComponentActivity() {
             } else {
                 val index = spinnerItems.selectedItemPosition
                 category[index] = editCategory.text.toString()
-                quantity[index] = editQuantity.text.toString()
+                quantity[index] = editQuantity.text.toString().toInt()
                 comments[index] = editComments.text.toString()
                 Toast.makeText(
                     this,
@@ -122,8 +125,8 @@ class MainActivity : ComponentActivity() {
             btnTotal.setOnClickListener {
                 var total = 0
                 for (i in quantity.indices) {
-                    total += quantity[i].toInt()
-                }
+                    total += quantity[i]
+            }
             }
 
 
@@ -131,9 +134,9 @@ class MainActivity : ComponentActivity() {
             btnDetails.setOnClickListener {
                 var display = ""
                 for (i in items.indices) {
-                    display += "Category: ${category[i]}\n"
+                    display += "Category: ${category[i]}\n\n"
                     display += "Quantity: ${quantity[i]}\n"
-                    display += "Comments: ${comments[i]}\n"
+                    display += "Comments: ${comments[i]}\n\n"
                 }
                 txtDetails.text = display
                 mainLayout.visibility = View.GONE
@@ -151,7 +154,7 @@ class MainActivity : ComponentActivity() {
         btnClear.setOnClickListener {
             for (i in category.indices) {
                 category[i] = ""
-                quantity[i] = ""
+                quantity[i] = 0
                 comments[i] = ""
             }
             txtTotalItemPacked.text = "Total Items Packed"
