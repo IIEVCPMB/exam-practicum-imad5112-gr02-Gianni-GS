@@ -3,6 +3,7 @@ package com.example.campsitecommander
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.Layout
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -10,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -81,45 +83,89 @@ class MainActivity : ComponentActivity() {
         val btnExit = findViewById<Button>(R.id.btnExit)
 
         // Splash Screen Navigation
+        btnStart.setOnClickListener {
+            splashLayout.visibility = View.GONE
+            mainLayout.visibility = View.VISIBLE
+
+        }
+
+        // Save Data
+        btnSave.setOnClickListener {
+            if (editCategory.text.isEmpty() ||
+                editQuantity.text.isEmpty() ||
+                editComments.text.isEmpty()
+                ) {
+
+                Toast.makeText(
+                    this,
+                    "Please fill all fields",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                val index = spinnerItems.selectedItemPosition
+                category[index] = editCategory.text.toString().toInt()
+                quantity[index] = editQuantity.text.toString().toInt()
+                comments[index] = editComments.text.toString()
+                Toast.makeText(
+                    this,
+                    "Data Saved Successfully",
+                    Toast.LENGTH_LONG
+                ).show()
+                editCategory.text.clear()
+                editQuantity.text.clear()
+                editComments.text.clear()
+
+            }
+        }
+
+        // Calculate Total
+            btnTotal.setOnClickListener {
+                var total = 0
+                for (i in quantity.indices) {
+                    total += quantity[i]
+                }
+            }
 
 
+        // View Details
+            btnDetails.setOnClickListener {
+                var display = ""
+                for (i in items.indices) {
+                    display += "Category: ${category[i]}\n"
+                    display += "Quantity: ${quantity[i]}\n"
+                    display += "Comments: ${comments[i]}\n"
+                }
+                txtDetails.text = display
+                mainLayout.visibility = View.GONE
+                detailsLayout.visibility = View.VISIBLE
 
+            }
 
+        // Back Button
+        btnBack.setOnClickListener {
+            detailsLayout.visibility = View.GONE
+            mainLayout.visibility = View.VISIBLE
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // Clear Data
+        btnClear.setOnClickListener {
+            for (i in category.indices) {
+                category[i] = 0
+                quantity[i] = 0
+                comments[i] = ""
+            }
+            txtTotalItemPacked.text = "Total Items Packed"
+            Toast.makeText(
+                this,
+                "Data Cleared",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+        // Exit App
+        btnExit.setOnClickListener {
+            finish()
+        }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
