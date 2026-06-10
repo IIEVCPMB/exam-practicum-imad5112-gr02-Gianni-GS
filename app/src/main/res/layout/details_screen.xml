@@ -17,7 +17,7 @@
 
         <!-- Heading -->
 
-        <!-- Details Output -->
+
 
         <!-- Back Button -->
 
@@ -27,8 +27,10 @@
             android:text="Full list of gear"
             android:textColor="@color/white"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
+        <!-- Details Output -->
         <TextView
             android:id="@+id/txtDetails"
             android:layout_width="match_parent"
@@ -38,8 +40,10 @@
             android:padding="16dp"
             android:text="Full list of gear with details will appear here"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
 
+        <!-- Back Button -->
         <Button
             android:id="@+id/btnBack"
             android:layout_width="match_parent"
