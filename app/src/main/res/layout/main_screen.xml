@@ -3,6 +3,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/river"
 
     >
 
@@ -17,19 +18,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weekly Weather Input"
+            android:text="Add Gear"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <!-- Day Spinner -->
-        <Spinner
-            android:id="@+id/spinnerDays"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#FFFFFF"
-            />
+
 
         <!-- Minimum Temperature -->
         <EditText
@@ -38,34 +32,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="#FFFFFF"
-            android:hint="Enter Minimum Temperature"
+            android:hint="Add Gear"
             android:inputType="number"
             android:padding="12dp"
             android:textSize="18sp"/>
 
-        <!-- Maximum Temperature -->
-        <EditText
-            android:id="@+id/editMax"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="#FFFFFF"
-            android:hint="Enter Maximum Temperature"
-            android:inputType="number"
-            android:padding="12dp"
-            android:textSize="18sp"/>
 
-        <!-- Weather Condition -->
-        <EditText
-            android:id="@+id/editCondition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="#FFFFFF"
-            android:hint="Enter Weather Condition"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp"
-            android:textSize="18sp"/>
 
         <!-- Save Button -->
         <Button
@@ -81,17 +53,7 @@
 
             />
 
-        <!-- Average Button -->
-        <Button
-            android:id="@+id/btnAverage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="CALCULATE AVERAGE"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="15dp"
-            />
+
 
         <!-- Details Button -->
         <Button
@@ -118,6 +80,18 @@
             />
 
 
+        <TextView
+            android:id="@+id/txtAverage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="Total items packed"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btnExit"
