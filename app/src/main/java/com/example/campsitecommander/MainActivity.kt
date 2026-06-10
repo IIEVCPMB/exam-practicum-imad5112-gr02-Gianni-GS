@@ -48,9 +48,9 @@ class MainActivity : ComponentActivity() {
         "Tent", "Marshmallows", "Flashlight"
     )
 
-    private val category = IntArray(3)
+    private val category = Array(3) { "" }
 
-    private val quantity = IntArray(3)
+    private val quantity = Array(3) { "" }
 
     private val comments = Array(3) { "" }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -103,8 +103,8 @@ class MainActivity : ComponentActivity() {
                 ).show()
             } else {
                 val index = spinnerItems.selectedItemPosition
-                category[index] = editCategory.text.toString().toInt()
-                quantity[index] = editQuantity.text.toString().toInt()
+                category[index] = editCategory.text.toString()
+                quantity[index] = editQuantity.text.toString()
                 comments[index] = editComments.text.toString()
                 Toast.makeText(
                     this,
@@ -122,7 +122,7 @@ class MainActivity : ComponentActivity() {
             btnTotal.setOnClickListener {
                 var total = 0
                 for (i in quantity.indices) {
-                    total += quantity[i]
+                    total += quantity[i].toInt()
                 }
             }
 
@@ -150,8 +150,8 @@ class MainActivity : ComponentActivity() {
         // Clear Data
         btnClear.setOnClickListener {
             for (i in category.indices) {
-                category[i] = 0
-                quantity[i] = 0
+                category[i] = ""
+                quantity[i] = ""
                 comments[i] = ""
             }
             txtTotalItemPacked.text = "Total Items Packed"
