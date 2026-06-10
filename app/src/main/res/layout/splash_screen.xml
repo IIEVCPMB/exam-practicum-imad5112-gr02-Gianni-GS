@@ -8,7 +8,7 @@
     android:padding="24dp"
     android:background="@drawable/river"
     >
-
+    <!-- Name of the app-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,8 +16,10 @@
         android:text="Campsite Commander"
         android:textColor="@color/white"
         android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
+    <!-- Name of developer-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +29,7 @@
         android:textSize="18sp"
         />
 
+    <!-- Student Code-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +38,7 @@
         android:textSize="16sp"
         />
 
+    <!-- Start Button-->
     <Button
         android:id="@+id/btnStart"
         android:layout_width="250dp"
@@ -44,7 +48,7 @@
         android:layout_marginBottom="12dp"
 
         />
-
+    <!-- Logo-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
