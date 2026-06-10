@@ -36,8 +36,8 @@
             android:layout_marginTop="20dp"
             android:background="#33FFFFFF"
             android:padding="16dp"
-            android:text=""
-            android:textColor="@color/black"
+            android:text="Full list of gear with details will appear here"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
         <Button
